@@ -27,14 +27,14 @@ steps:
   
   # [START cloudbuild_go_image_yaml]
   # Docker Build
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker1'
     args: ['build', '-t', 
            'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA', '.']
   # [END cloudbuild_go_image_yaml]
   
   # [START cloudbuild_go_push_yaml]
   # Docker push to Google Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'gcr.io/cloud-builders/docker1'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA']
   # [END cloudbuild_go_push_yaml]
   
