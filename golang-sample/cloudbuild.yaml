@@ -25,18 +25,18 @@ steps:
         /go/bin/go-junit-report -set-exit-code < sponge.log > ${SHORT_SHA}_test_log.xml
   # [END cloudbuild_go_test_yaml]
   
-  # [START cloudbuild_go_image_yaml]
-  # Docker Build
-  - name: 'gcr.io/cloud-builders/docker1'
-    args: ['build', '-t', 
-           'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA', '.']
-  # [END cloudbuild_go_image_yaml]
+#   # [START cloudbuild_go_image_yaml]
+#   # Docker Build
+#   - name: 'gcr.io/cloud-builders/docker1'
+#     args: ['build', '-t', 
+#            'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA', '.']
+#   # [END cloudbuild_go_image_yaml]
   
-  # [START cloudbuild_go_push_yaml]
-  # Docker push to Google Artifact Registry
-  - name: 'gcr.io/cloud-builders/docker1'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA']
-  # [END cloudbuild_go_push_yaml]
+#   # [START cloudbuild_go_push_yaml]
+#   # Docker push to Google Artifact Registry
+#   - name: 'gcr.io/cloud-builders/docker1'
+#     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/myimage1:$SHORT_SHA']
+#   # [END cloudbuild_go_push_yaml]
   
   # [START cloudbuild_go_deploy_yaml]
   # Deploy to Cloud Run
